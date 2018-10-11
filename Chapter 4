@@ -70,3 +70,192 @@ def draw_poly(turtle, rangeValue, angleTurns):
 
 
 draw_poly(turtle, rangeValue, angleTurns)
+
+---------------------------------------------------------------------
+Question 4:
+
+import turtle
+
+window = turtle.Screen()
+window.bgcolor("lightgreen")
+
+ttl = turtle.Turtle()
+ttl.pensize(10)
+ttl.color("blue")
+ttl.shape("turtle")
+
+def draw_poly():
+    for i in (range(4)):
+        ttl.forward(100)
+        ttl.backward(100)
+        ttl.right(90)
+    ttl.forward(100)
+    ttl.right(90)
+    ttl.backward(100)
+    for i in (range(4)):
+        ttl.forward(200)
+        ttl.right(90)
+    ttl.forward(100)
+    ttl.left(90)
+    ttl.backward(100)
+
+for i in (range(5)):
+    draw_poly()
+    ttl.right(18)
+
+window.mainloop()
+
+---------------------------------------------------------------------
+Question 5:
+
+#First Code
+
+import turtle
+
+window = turtle.Screen()
+window.bgcolor("lightgreen")
+
+ttl = turtle.Turtle()
+ttl.pensize(2)
+ttl.color("blue")
+ttl.shape("turtle")
+
+def draw_poly():
+    size = 3
+    for i in range(100):
+        ttl.forward(size)
+        ttl.right(90)
+        size += 3
+
+draw_poly()
+
+window.mainloop()
+------------------------------
+
+#Second Code
+
+import turtle
+
+window = turtle.Screen()
+window.bgcolor("lightgreen")
+
+ttl = turtle.Turtle()
+ttl.pensize(2)
+ttl.color("blue")
+ttl.shape("turtle")
+
+def draw_poly():
+    size = 3
+    for i in range(100):
+        ttl.forward(size)
+        ttl.right(89)
+        size += 3
+
+draw_poly()
+
+window.mainloop()
+
+---------------------------------------------------------------------
+Question 6:
+
+import turtle
+
+window = turtle.Screen()
+window.bgcolor("lightgreen")
+
+ttl = turtle.Turtle()
+ttl.pensize(2)
+ttl.color("blue")
+ttl.shape("turtle")
+
+def draw_poly(linesNeeded, angle, size):
+    for i in range(linesNeeded):
+        ttl.forward(size)
+        ttl.right(angle)
+
+def draw_Triangle():
+    angle = 120
+    linesNeeded = 3
+    size = 100
+    draw_poly(linesNeeded, angle, size)
+
+draw_Triangle()
+
+window.mainloop()
+
+---------------------------------------------------------------------
+Question 7:
+
+def sum_to(n):
+    total = 0
+    for i in range(1, n+1):
+        total += i
+    return total
+
+n = int(input("What number do you want to add up to: "))
+total = sum_to(n)
+print(total)
+
+---------------------------------------------------------------------
+Question 8:
+
+def area_of_circle(r, pi):
+    areaOfCircle = r**2
+    areaOfCircle = areaOfCircle * pi
+    return areaOfCircle
+
+pi = 3.142
+radius = float(input("What is the radius of the circle: "))
+area = area_of_circle(radius, pi)
+print(area)
+
+---------------------------------------------------------------------
+Question 9:
+
+import turtle
+
+window = turtle.Screen()
+window.bgcolor("lightgreen")
+
+ttl = turtle.Turtle()
+ttl.pensize(2)
+ttl.color("blue")
+ttl.shape("turtle")
+
+def draw_star():
+    ttl.left(72)
+    for i in range(5):
+        ttl.forward(100)
+        ttl.right(144)
+
+draw_star()
+
+window.mainloop()
+
+---------------------------------------------------------------------
+Question 10:
+
+import turtle
+
+window = turtle.Screen()
+window.bgcolor("lightgreen")
+
+ttl = turtle.Turtle()
+ttl.pensize(2)
+ttl.color("blue")
+ttl.shape("turtle")
+
+def draw_star():
+    ttl.left(72)
+    for i in range(5):
+        ttl.forward(100)
+        ttl.right(144)
+
+for i in range(5):
+    draw_star()
+    ttl.penup()
+    ttl.forward(200)
+    ttl.right(144)
+    ttl.pendown()
+
+window.mainloop()
