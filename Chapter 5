@@ -1,0 +1,287 @@
+-------------------------------------------------------------------------------------
+Question 1:
+
+def FindDayOfWeek():
+    if dayNeeded == 0:
+        print("Sunday")
+    elif dayNeeded == 1:
+        print("Monday")
+    elif dayNeeded == 2:
+        print("Tuesday")
+    elif dayNeeded == 3:
+        print("Wednesday")
+    elif dayNeeded == 4:
+        print("Thursday")
+    elif dayNeeded == 5:
+        print("Friday")
+    elif dayNeeded == 6:
+        print("Saturday")
+
+dayNeeded = int(input("Which day of the week is it?: "))
+FindDayOfWeek()
+
+-------------------------------------------------------------------------------------
+Question 2:
+
+def FindDayOfWeek(day):
+    if day == 0:
+        print("Sunday")
+    elif day == 1:
+        print("Monday")
+    elif day == 2:
+        print("Tuesday")
+    elif day == 3:
+        print("Wednesday")
+    elif day == 4:
+        print("Thursday")
+    elif day == 5:
+        print("Friday")
+    elif day == 6:
+        print("Saturday")
+
+def CalculatingDay():
+    endDay = 137 % 7
+    day = startDay + endDay
+    if day > 6:
+        day -= 6
+    return day
+
+startDay = int(input("Which day of the week is it?: "))
+day = CalculatingDay()
+FindDayOfWeek(day)
+
+-------------------------------------------------------------------------------------
+Question 3:
+
+a) a < b
+b) a < b
+c) a < 18 and day != 3
+d) a < 18 and day == 3
+
+-------------------------------------------------------------------------------------
+Question 4:
+
+a) True
+b) False
+c) True
+d) True
+
+-------------------------------------------------------------------------------------
+Question 5:
+
+a) T
+b) T
+c) T
+d) T
+e) T
+f) T
+g) F
+h) T
+
+-------------------------------------------------------------------------------------
+Question 6:
+
+def CalculateGrade():
+    if (mark >= 75):
+        grade = "First"
+    elif (mark >= 70 and mark < 75):
+        grade = "Upper Second"
+    elif (mark >= 60 and mark < 70):
+        grade = "Second"
+    elif (mark >= 50 and mark < 60):
+        grade = "Third"
+    elif (mark >= 45 and mark < 50):
+        grade = "F1 Supp"
+    elif (mark >= 40 and mark < 45):
+        grade = "F2"
+    elif (mark < 40):
+        grade = "F3"
+    return grade
+
+
+mark = int(input("What was the marks: "))
+grade = CalculateGrade()
+print (grade)
+
+--------------------------------------------------------
+
+def CalculateGrade():
+    if (mark >= 75):
+        grade = "First"
+    elif (mark >= 70 and mark < 75):
+        grade = "Upper Second"
+    elif (mark >= 60 and mark < 70):
+        grade = "Second"
+    elif (mark >= 50 and mark < 60):
+        grade = "Third"
+    elif (mark >= 45 and mark < 50):
+        grade = "F1 Supp"
+    elif (mark >= 40 and mark < 45):
+        grade = "F2"
+    elif (mark < 40):
+        grade = "F3"
+    return grade
+
+
+marks = [83, 75, 74.9, 70, 69.9, 65, 60, 59.9, 55, 50, 49.9, 45, 44.9, 40, 39.9, 2, 0]
+for mark in marks:
+    grade = CalculateGrade()
+    print (mark, "=", grade)
+
+-------------------------------------------------------------------------------------
+Question 7:
+
+import turtle
+
+def draw_bar(t, height):
+    t.begin_fill()
+    t.left(90)
+    t.forward(height)
+    t.write("  "+ str(height))
+    t.right(90)
+    t.forward(40)
+    t.right(90)
+    t.forward(height)
+    t.left(90)
+    t.end_fill()
+    t.penup()
+    t.forward(10)
+    t.pendown()
+
+wn = turtle.Screen()
+wn.bgcolor("lightgreen")
+
+tess = turtle.Turtle()
+tess.color("blue", "red")
+tess.pensize(3)
+
+xs = [48,117,200,240,160,260,220]
+
+for a in xs:
+    draw_bar(tess, a)
+
+wn.mainloop()
+
+-------------------------------------------------------------------------------------
+Question 8:
+
+import turtle
+
+def draw_bar(t, height):
+    t.begin_fill()
+    t.left(90)
+    t.forward(height)
+    t.write("  "+ str(height))
+    t.right(90)
+    t.forward(40)
+    t.right(90)
+    t.forward(height)
+    t.left(90)
+    t.end_fill()
+    t.penup()
+    t.forward(10)
+    t.pendown()
+
+def DetermineColour():
+    if a > 200:
+        tess.color("blue", "red")
+    elif a <= 200 and a >= 100:
+        tess.color("blue", "yellow")
+    elif a < 100:
+        tess.color("blue", "green")
+
+wn = turtle.Screen()
+wn.bgcolor("lightgreen")
+
+tess = turtle.Turtle()
+tess.pensize(3)
+
+xs = [48,117,200,240,160,260,220]
+
+for a in xs:
+    DetermineColour()
+    draw_bar(tess, a)
+
+wn.mainloop()
+
+-------------------------------------------------------------------------------------
+Question 9:
+
+import turtle
+
+def draw_bar(t, height):
+    t.begin_fill()
+    t.left(90)
+    t.forward(height)
+    if height > 0:
+        t.write("  "+ str(height))
+    else:
+        t.penup()
+        t.backward(20)
+        t.write("  " + str(height))
+        t.forward(20)
+        t.pendown()
+    t.right(90)
+    t.forward(40)
+    t.right(90)
+    t.forward(height)
+    t.left(90)
+    t.end_fill()
+    t.penup()
+    t.forward(10)
+    t.pendown()
+
+def DetermineColour():
+    if a > 200:
+        tess.color("blue", "red")
+    elif a <= 200 and a >= 100:
+        tess.color("blue", "yellow")
+    elif a < 100:
+        tess.color("blue", "green")
+
+wn = turtle.Screen()
+wn.bgcolor("lightgreen")
+
+tess = turtle.Turtle()
+tess.pensize(3)
+
+xs = [48,-117,200,240,160,-260,220]
+
+for a in xs:
+    DetermineColour()
+    draw_bar(tess, a)
+
+wn.mainloop()
+
+-------------------------------------------------------------------------------------
+Question 10:
+
+import math
+
+def findHyp():
+    aSq = sidetwo ** 2
+    bSq = sideOne ** 2
+    cSq = bSq + aSq
+    hyp = math.sqrt(cSq)
+    return hyp
+
+sideOne = int(input("What is the size of the first side: "))
+sidetwo = int(input("What is the size of the second side: "))
+sidethree = findHyp()
+print("The third side is ",sidethree)
+
+-------------------------------------------------------------------------------------
+Question 11:
+
+import math
+
+def isRightAngled(a, b, c):
+    a, b, c = sorted([a, b, c])
+    return abs(a**2 + b**2 - c**2) < 0.1
+
+sideOne = int(input("What is the first side of the triangle: "))
+sideTwo = int(input("What is the next side of the triangle: "))
+sideThree = int(input("What is the last side of the triangle: "))
+print (isRightAngled(sideOne, sideTwo, sideThree))
+
+-------------------------------------------------------------------------------------
