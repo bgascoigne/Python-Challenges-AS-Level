@@ -1,0 +1,162 @@
+------------------------------------------------------------
+Question 1:
+
+def test_suite():
+    test(turn_clockwise("N") == "E")
+    test(turn_clockwise("W") == "N")
+    test(turn_clockwise(42) == None)
+    test(turn_clockwise("rubbish") == None)
+
+def turn_clockwise(x):
+    if(x == "N"):
+        return("E")
+    elif(x == "E"):
+        return("S")
+    elif(x == "S"):
+        return("W")
+    elif(x == "W"):
+        return("N")
+    else:
+        return(None)
+
+------------------------------------------------------------
+Question 2:
+
+def test_suite():
+    test(day_name(3) == "Wednesday")
+    test(day_name(6) == "Saturday")
+    test(day_name(42) == None)
+    
+def day_name(day):
+    if(day == 0):
+        return ("Sunday")
+    elif(day == 1):
+        return ("Monday")
+    elif(day == 2):
+        return ("Tuesday")
+    elif(day == 3):
+        return ("Wednesday")
+    elif(day == 4):
+        return ("Thursday")
+    elif(day == 5):
+        return ("Friday")
+    elif(day == 6):
+        return ("Saturday")
+    else:
+        return (None)
+
+------------------------------------------------------------
+Question 3:
+
+def test_suite():
+    test(day_num("Friday") == 5)
+    test(day_num("Sunday") == 0)
+    test(day_num(day_name(3)) == 3)
+    test(day_name(day_num("Thursday")) == "Thursday")
+    
+def day_num(dayName):
+    if(dayName == "Sunday"):
+        return (0)
+    elif(dayName == "Monday"):
+        return (1)
+    elif(dayName == "Tuesday"):
+        return (2)
+    elif(dayName == "Wednesday"):
+        return (3)
+    elif(dayName == "Thursday"):
+        return (4)
+    elif(dayName == "Friday"):
+        return (5)
+    elif(dayName == "Saturday"):
+        return (6)
+    else:
+        return (None)
+
+------------------------------------------------------------
+Question 4:
+
+def test_suite():
+    test(day_add("Monday", 4) ==  "Friday")
+    test(day_add("Tuesday", 0) == "Tuesday")
+    test(day_add("Tuesday", 14) == "Tuesday")
+    test(day_add("Sunday", 100) == "Tuesday")
+
+def day_add(currentDay, daysToGo):
+    if(currentDay == "Sunday"):
+        dayValue = 0
+    elif(currentDay == "Monday"):
+        dayValue = 1
+    elif(currentDay == "Tuesday"):
+        dayValue = 2
+    elif(currentDay == "Wednesday"):
+        dayValue = 3
+    elif(currentDay == "Thursday"):
+        dayValue = 4
+    elif(currentDay == "Friday"):
+        dayValue = 5
+    elif(currentDay == "Saturday"):
+        dayValue = 6
+    dayValue += daysToGo
+    while dayValue > 6:
+        dayValue -= 7
+    if(dayValue == 0):
+        return ("Sunday")
+    elif(dayValue == 1):
+        return ("Monday")
+    elif(dayValue == 2):
+        return ("Tuesday")
+    elif(dayValue == 3):
+        return ("Wednesday")
+    elif(dayValue == 4):
+        return ("Thursday")
+    elif(dayValue == 5):
+        return ("Friday")
+    elif(dayValue == 6):
+        return ("Saturday")
+
+------------------------------------------------------------
+Question 5:
+
+------------------------------------------------------------
+Question 6:
+
+------------------------------------------------------------
+Question 7:
+
+------------------------------------------------------------
+Question 8:
+
+------------------------------------------------------------
+Question 9:
+
+------------------------------------------------------------
+Question 10:
+
+------------------------------------------------------------
+Question 11:
+
+------------------------------------------------------------
+Question 12:
+
+------------------------------------------------------------
+Question 13:
+
+------------------------------------------------------------
+Question 14:
+
+------------------------------------------------------------
+Question 15:
+
+------------------------------------------------------------
+Question 16:
+
+------------------------------------------------------------
+Question 17:
+
+------------------------------------------------------------
+Question 18:
+
+------------------------------------------------------------
+Question 19:
+
+------------------------------------------------------------
