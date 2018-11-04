@@ -78,7 +78,7 @@ def drawObjects():
     ttl.penup()
     ttl.forward(100)
     ttl.pendown()
-    for n in range(6):          #Hexagon
+    for n in range(6):          #Hexagon 
         ttl.forward(50)
         ttl.left(60)
     ttl.penup()
