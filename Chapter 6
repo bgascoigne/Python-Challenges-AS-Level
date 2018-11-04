@@ -82,37 +82,51 @@ def test_suite():
     test(day_add("Sunday", 100) == "Tuesday")
 
 def day_add(currentDay, daysToGo):
+    dayValue = 0;
+    dayValue = FindingCurrentDayValue(currentDay, daysToGo);
+    dayValue = CalculateFutureDay(dayValue, daysToGo)
+    return FindingDayName(dayValue)
+
+def CalculateFutureDay(dayValue, daysToGo):
+    dayValue += daysToGo;
+    while dayValue >= 7:
+        dayValue -= 7;
+    return dayValue
+
+def FindingDayName(currentDayValue):
+    if(currentDayValue == 0):
+        return "Sunday";
+    elif(currentDayValue == 1):
+        return "Monday";
+    elif(currentDayValue == 2):
+        return "Tuesday";
+    elif(currentDayValue == 3):
+        return "Wednesday";
+    elif(currentDayValue == 4):
+        return "Thursday";
+    elif(currentDayValue == 5):
+        return "Friday";
+    elif(currentDayValue == 6):
+        return "Saturday";
+
+def FindingCurrentDayValue(currentDay, daysToGo):
     if(currentDay == "Sunday"):
-        dayValue = 0
+        dayValue = 0;
     elif(currentDay == "Monday"):
-        dayValue = 1
+        dayValue = 1;
     elif(currentDay == "Tuesday"):
-        dayValue = 2
+        dayValue = 2;
     elif(currentDay == "Wednesday"):
-        dayValue = 3
+        dayValue = 3;
     elif(currentDay == "Thursday"):
-        dayValue = 4
+        dayValue = 4;
     elif(currentDay == "Friday"):
-        dayValue = 5
+        dayValue = 5;
     elif(currentDay == "Saturday"):
-        dayValue = 6
-    dayValue += daysToGo
-    while dayValue > 6:
-        dayValue -= 7
-    if(dayValue == 0):
-        return ("Sunday")
-    elif(dayValue == 1):
-        return ("Monday")
-    elif(dayValue == 2):
-        return ("Tuesday")
-    elif(dayValue == 3):
-        return ("Wednesday")
-    elif(dayValue == 4):
-        return ("Thursday")
-    elif(dayValue == 5):
-        return ("Friday")
-    elif(dayValue == 6):
-        return ("Saturday")
+        dayValue = 6;
+    return dayValue;
+
+test_suite();
 
 ------------------------------------------------------------
 Question 5:
