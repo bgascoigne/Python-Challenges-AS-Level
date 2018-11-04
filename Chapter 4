@@ -258,4 +258,4 @@ for i in range(5):
     ttl.right(144)
     ttl.pendown()
 
-window.mainloop()
+window.mainloop() 
