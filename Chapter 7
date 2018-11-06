@@ -1,0 +1,142 @@
+-------------------------------------------------------------------
+Question 1:
+
+def FindingOddNumbers(numList):
+    count = 0
+    for num in numList:
+        if (num % 2) != 0:
+            count += 1
+    print("There are", count, "odd numbers in this list.")
+
+listOfNumbers = [2,7,89,234567,13,5,6]
+FindingOddNumbers(listOfNumbers)
+
+-------------------------------------------------------------------
+Question 2:
+
+def TotallingEvenNumbers(numList):
+    total = 0
+    for num in numList:
+        if (num % 2) == 0:
+            total += num
+    return total
+
+listOfNumbers = [2,7,89,234567,13,5,6]
+evenTotal = TotallingEvenNumbers(listOfNumbers)
+print("Total of even numbers is:", evenTotal)
+
+-------------------------------------------------------------------
+Question 3:
+
+def TotallingOddNumbers(numList):
+    total = 0
+    for num in numList:
+        if (num % 2) != 0:
+            total += num
+    return total
+    
+listOfNumbers = [2,7,89,234567,13,5,6]
+oddTotal = TotallingOddNumbers(listOfNumbers)
+print("Total of odd numbers is:", oddTotal)
+
+-------------------------------------------------------------------
+Question 4:
+
+def NumLengthOfFive(numList):
+    count = 0
+    for num in numList:
+        if len(str(num)) == 5:
+            count += 1
+    return count
+
+listOfNumbers = [2,7,89123,234567,13,5,22226]
+numbersLengthOfFive = NumLengthOfFive(listOfNumbers)
+print (numbersLengthOfFive)
+
+-------------------------------------------------------------------
+Question 5:
+
+def TotallingAllNumbersUpToEven(numList):
+    total = 0
+    for num in numList:
+        if num % 2 == 0:
+            return total
+        total += num
+    return total
+
+listOfNumbers = [89123,13,2,7,234567,5,22226]
+totalUpToFirstEven = TotallingAllNumbersUpToEven(listOfNumbers)
+print("The total up to the first even number is:", totalUpToFirstEven)
+
+-------------------------------------------------------------------
+Question 6:
+
+def FindingAmountOfNamesUptoSam(numList):
+    count = 0
+    for num in numList:
+        if num == "sam":
+            return count
+        elif(str(num).isalpha()):
+            count += 1
+    return count
+
+listOfNumbers = [89123,"steve",13,2,7,234567,"sam",5,22226, "john"]
+nameAmountUpToSam = FindingAmountOfNamesUptoSam(listOfNumbers)
+print ("There are", nameAmountUpToSam, "names before sam.")
+
+-------------------------------------------------------------------
+Question 7:
+
+def NewtonsSquareRoot(number):
+    approx = number / 2
+    while True:
+        better = (approx + number/approx) / 2
+        print(better)
+        if abs(approx - better) < 0.001:
+            return better
+        approx = better
+
+betterSqrt = NewtonsSquareRoot(25)
+
+-------------------------------------------------------------------
+Question 8:
+
+def print_multiples(n, high):
+    for i in range(1, high+1):
+        print(n * i, end="   ")
+    print()
+
+def print_mult_table(high):
+    for i in range(1, high+1):
+        print_multiples(i, high)
+
+print_mult_table(9)
+
+-------------------------------------------------------------------
+Question 9:
+
+-------------------------------------------------------------------
+Question 10:
+
+-------------------------------------------------------------------
+Question 11:
+
+-------------------------------------------------------------------
+Question 12:
+
+-------------------------------------------------------------------
+Question 13:
+
+-------------------------------------------------------------------
+Question 14:
+
+-------------------------------------------------------------------
+Question 15:
+
+-------------------------------------------------------------------
+Question 16:
+
+-------------------------------------------------------------------
+Question 17:
+
+-------------------------------------------------------------------
