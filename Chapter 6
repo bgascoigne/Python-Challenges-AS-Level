@@ -1,0 +1,421 @@
+------------------------------------------------------------
+Question 1:
+
+def test_suite():
+    test(turn_clockwise("N") == "E")
+    test(turn_clockwise("W") == "N")
+    test(turn_clockwise(42) == None)
+    test(turn_clockwise("rubbish") == None)
+
+def turn_clockwise(x):
+    if(x == "N"):
+        return("E")
+    elif(x == "E"):
+        return("S")
+    elif(x == "S"):
+        return("W")
+    elif(x == "W"):
+        return("N")
+    else:
+        return(None)
+
+------------------------------------------------------------
+Question 2:
+
+def test_suite():
+    test(day_name(3) == "Wednesday")
+    test(day_name(6) == "Saturday")
+    test(day_name(42) == None)
+    
+def day_name(day):
+    if(day == 0):
+        return ("Sunday")
+    elif(day == 1):
+        return ("Monday")
+    elif(day == 2):
+        return ("Tuesday")
+    elif(day == 3):
+        return ("Wednesday")
+    elif(day == 4):
+        return ("Thursday")
+    elif(day == 5):
+        return ("Friday")
+    elif(day == 6):
+        return ("Saturday")
+    else:
+        return (None)
+
+------------------------------------------------------------
+Question 3:
+
+def test_suite():
+    test(day_num("Friday") == 5)
+    test(day_num("Sunday") == 0)
+    test(day_num(day_name(3)) == 3)
+    test(day_name(day_num("Thursday")) == "Thursday")
+    
+def day_num(dayName):
+    if(dayName == "Sunday"):
+        return (0)
+    elif(dayName == "Monday"):
+        return (1)
+    elif(dayName == "Tuesday"):
+        return (2)
+    elif(dayName == "Wednesday"):
+        return (3)
+    elif(dayName == "Thursday"):
+        return (4)
+    elif(dayName == "Friday"):
+        return (5)
+    elif(dayName == "Saturday"):
+        return (6)
+    else:
+        return (None)
+
+------------------------------------------------------------
+Question 4:
+
+def test_suite():
+    test(day_add("Monday", 4) ==  "Friday")
+    test(day_add("Tuesday", 0) == "Tuesday")
+    test(day_add("Tuesday", 14) == "Tuesday")
+    test(day_add("Sunday", 100) == "Tuesday")
+
+def day_add(currentDay, daysToGo):
+    dayValue = 0;
+    dayValue = FindingCurrentDayValue(currentDay, daysToGo);
+    dayValue = CalculateFutureDay(dayValue, daysToGo)
+    return FindingDayName(dayValue)
+
+def CalculateFutureDay(dayValue, daysToGo):
+    dayValue += daysToGo;
+    while dayValue >= 7:
+        dayValue -= 7;
+    return dayValue
+
+def FindingDayName(currentDayValue):
+    if(currentDayValue == 0):
+        return "Sunday";
+    elif(currentDayValue == 1):
+        return "Monday";
+    elif(currentDayValue == 2):
+        return "Tuesday";
+    elif(currentDayValue == 3):
+        return "Wednesday";
+    elif(currentDayValue == 4):
+        return "Thursday";
+    elif(currentDayValue == 5):
+        return "Friday";
+    elif(currentDayValue == 6):
+        return "Saturday";
+
+def FindingCurrentDayValue(currentDay, daysToGo):
+    if(currentDay == "Sunday"):
+        dayValue = 0;
+    elif(currentDay == "Monday"):
+        dayValue = 1;
+    elif(currentDay == "Tuesday"):
+        dayValue = 2;
+    elif(currentDay == "Wednesday"):
+        dayValue = 3;
+    elif(currentDay == "Thursday"):
+        dayValue = 4;
+    elif(currentDay == "Friday"):
+        dayValue = 5;
+    elif(currentDay == "Saturday"):
+        dayValue = 6;
+    return dayValue;
+
+test_suite();
+
+------------------------------------------------------------
+Question 5:
+
+#Skipped this question as the maths is beyond my capability
+
+------------------------------------------------------------
+Question 6:
+
+import sys
+
+def test(did_pass):
+    """  Print the result of a test.  """
+    linenum = sys._getframe(1).f_lineno   # Get the caller's line number.
+    if did_pass:
+        msg = "Test at line {0} ok.".format(linenum)
+    else:
+        msg = ("Test at line {0} FAILED.".format(linenum))
+    print(msg)
+
+def test_suite():
+    test(days_in_month("February") == 28)
+    test(days_in_month("December") == 31)
+
+def days_in_month(month):
+    numOfDays = 0
+    if month in ["September", "April", "June", "November"]:
+        numOfDays = 30
+    elif month in ["February"]:
+        numOfDays = 28
+    else:
+        numOfDays = 31
+    return numOfDays
+
+test_suite();
+
+------------------------------------------------------------
+Question 7:
+
+import sys
+
+def test(did_pass):
+    """  Print the result of a test.  """
+    linenum = sys._getframe(1).f_lineno   # Get the caller's line number.
+    if did_pass:
+        msg = "Test at line {0} ok.".format(linenum)
+    else:
+        msg = ("Test at line {0} FAILED.".format(linenum))
+    print(msg)
+
+def test_suite():
+    test(to_secs(2, 30, 10) == 9010)
+    test(to_secs(2, 0, 0) == 7200)
+    test(to_secs(0, 2, 0) == 120)
+    test(to_secs(0, 0, 42) == 42)
+    test(to_secs(0, -10, 10) == -590)
+
+def to_secs(hour, minute, sec):
+    hourSecs = calculatingHours(hour)
+    minuteSecs = calculatingMinutes(minute)
+    totalSeconds = hourSecs + minuteSecs + sec
+    return totalSeconds
+
+def calculatingHours(hour):
+    seconds = 0
+    while hour != 0:
+        seconds += 3600
+        hour -= 1
+    return seconds
+
+def calculatingMinutes(minute):
+    seconds = 0
+    while minute != 0:
+        seconds += 60
+        minute -= 1
+    return seconds
+
+test_suite()
+
+------------------------------------------------------------
+Question 8:
+
+#Skipped this question as the maths is beyond my capability
+
+------------------------------------------------------------
+Question 9:
+
+#Skipped this question as the maths is beyond my capability
+
+------------------------------------------------------------
+Question 10:
+
+test(3 % 4 == 0)                    # Failed
+test(3 % 4 == 3)                    # Passed
+test(3 / 4 == 0)                    # Failed
+test(3 // 4 == 0)                   # Passed
+test(3+4  *  2 == 14)               # Failed
+test(4-2+2 == 0)                    # Failed
+test(len("hello, world!") == 13)    # Passed
+
+------------------------------------------------------------
+Question 11:
+
+import sys
+
+def test(did_pass):
+    """  Print the result of a test.  """
+    linenum = sys._getframe(1).f_lineno   # Get the caller's line number.
+    if did_pass:
+        msg = "Test at line {0} ok.".format(linenum)
+    else:
+        msg = ("Test at line {0} FAILED.".format(linenum))
+    print(msg)
+
+def test_suite():
+    test(compare(5, 4) == 1)
+    test(compare(7, 7) == 0)
+    test(compare(2, 3) == -1)
+    test(compare(42, 1) == 1)
+
+def compare(a, b):
+    if a > b:
+        return 1
+    if a == b:
+        return 0
+    if a < b:
+        return -1
+
+test_suite()
+
+
+------------------------------------------------------------
+Question 12:
+
+import sys
+import math
+
+def test(did_pass):
+    """  Print the result of a test.  """
+    linenum = sys._getframe(1).f_lineno   # Get the caller's line number.
+    if did_pass:
+        msg = "Test at line {0} ok.".format(linenum)
+    else:
+        msg = ("Test at line {0} FAILED.".format(linenum))
+    print(msg)
+
+def test_suite():
+    test(hypotenuse(3, 4) == 5.0)
+    test(hypotenuse(12, 5) == 13.0)
+    test(hypotenuse(24, 7) == 25.0)
+    test(hypotenuse(9, 12) == 15.0)
+
+def hypotenuse(lengthA, lengthB):
+    lengthCSqr = 0
+    lengthASqr = lengthA**2
+    lengthBSqr = lengthB**2
+    lengthCSqr = lengthBSqr + lengthASqr
+    lengthC = math.sqrt(lengthCSqr)
+    return lengthC
+
+test_suite()
+
+------------------------------------------------------------
+Question 13:
+
+#Skipped this question as the maths is beyond my capability
+
+------------------------------------------------------------
+Question 14:
+
+import sys
+import random
+
+def test(did_pass):
+    """  Print the result of a test.  """
+    linenum = sys._getframe(1).f_lineno   # Get the caller's line number.
+    if did_pass:
+        msg = "Test at line {0} ok.".format(linenum)
+    else:
+        msg = ("Test at line {0} FAILED.".format(linenum))
+    print(msg)
+
+def test_suite():
+    test(is_odd(random.randint(0,100)) == True)
+
+def is_odd(n):
+    print(n)
+    if n % 2 == 0:
+        return False
+    else:
+        return True
+
+test_suite()
+
+------------------------------------------------------------
+Question 15:
+
+import sys
+import random
+
+def test(did_pass):
+    """  Print the result of a test.  """
+    linenum = sys._getframe(1).f_lineno   # Get the caller's line number.
+    if did_pass:
+        msg = "Test at line {0} ok.".format(linenum)
+    else:
+        msg = ("Test at line {0} FAILED.".format(linenum))
+    print(msg)
+
+def test_suite():
+    test(is_odd(random.randint(-100,100)) == True)
+    test(is_even(random.randint(-100,100)) == True)
+
+def is_odd(n):
+    print(n)
+    if n % 2 == 0:
+        return False
+    else:
+        return True
+
+def is_even(n):
+    print(n)
+    if n % 2 == 0:
+        return True
+    else:
+        return False
+
+test_suite()
+
+------------------------------------------------------------
+Question 16:
+
+import sys
+import random
+
+def test(did_pass):
+    """  Print the result of a test.  """
+    linenum = sys._getframe(1).f_lineno   # Get the caller's line number.
+    if did_pass:
+        msg = "Test at line {0} ok.".format(linenum)
+    else:
+        msg = ("Test at line {0} FAILED.".format(linenum))
+    print(msg)
+
+def test_suite():
+    test(is_factor(3, 12))
+    test(not is_factor(5, 12))
+    test(is_factor(7, 14))
+    test(not is_factor(7, 15))
+    test(is_factor(1, 15))
+    test(is_factor(15, 15))
+    test(not is_factor(25, 15))
+
+def is_factor(factor, ofValue):
+    if factor % ofValue == 0:
+        return True
+    else:
+        return False
+
+test_suite()
+
+------------------------------------------------------------
+Question 17:
+
+import sys
+import random
+
+def test(did_pass):
+    """  Print the result of a test.  """
+    linenum = sys._getframe(1).f_lineno   # Get the caller's line number.
+    if did_pass:
+        msg = "Test at line {0} ok.".format(linenum)
+    else:
+        msg = ("Test at line {0} FAILED.".format(linenum))
+    print(msg)
+
+def test_suite():
+    test(is_multiple(12, 3))
+    test(is_multiple(12, 4))
+    test(not is_multiple(12, 5))
+    test(is_multiple(12, 6))
+    test(not is_multiple(12, 7))
+
+def is_multiple(ofValue, multiple):
+    if ofValue % multiple == 0:
+        return True
+    else:
+        return False
+
+test_suite()
+
+------------------------------------------------------------
