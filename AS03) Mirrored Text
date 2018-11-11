@@ -1,1 +1,13 @@
+def ReverseWord(word):
+    reversedWord = ""
+    for letter in word:
+        reversedWord = letter + reversedWord
+    return reversedWord
 
+while True:
+    word = input("What word would you like me to spell backwards?:")
+    reversedWord = ReverseWord(word)
+    print("The word reversed is:", reversedWord)
+    again = input("Would you like to do another word?:")
+    if again in ["n", "N", "no", "No", "NO"]:
+        break
