@@ -1,0 +1,8 @@
+wordList = ["C++", "C#", "HTML", "Ruby", "Python", "JavaScript"]
+attempts = 1
+
+for i in wordList:
+    if i in "Python":
+        print("I have found 'python' in", attempts, "attempts.")
+    else:
+        attempts += 1
