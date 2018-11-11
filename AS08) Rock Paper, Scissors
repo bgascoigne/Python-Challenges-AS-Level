@@ -1,0 +1,76 @@
+import random
+
+rockImage ="""
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+"""
+
+paperImage ="""
+     _______
+---'    ____)____
+           ______)
+          _______)
+         _______)
+---.__________)
+"""
+
+scissorsImage = """
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+"""
+
+def ComputerTurn(sImage, pImage, rImage):
+    choices = ["s", "p", "r"]
+    choice = choices[random.randint(0,2)]
+    print("The computer has chosen:")
+    if choice in "scissors":
+        print(sImage)
+    if choice in "paper":
+        print(pImage)
+    if choice in "rock":
+        print(rImage)
+    return choice
+
+def DetermineDraw(userChoice, computerChoice):
+    if userChoice == computerChoice:
+        draw = True
+    else:
+        draw = False
+    return draw
+
+def DetermineWinner(userChoice, computerChoice):
+    userWin = False
+    if(userChoice == "r") and (computerChoice == "s"):
+        userWin = True
+    elif(userChoice == "p") and (computerChoice == "r"):
+        userWin = True
+    elif(userChoice == "s") and (computerChoice == "p"):
+        userWin = True
+    else:
+        userWin = False
+    return userWin
+
+print("Welcome to rock, paper, scissors!")
+while True:
+    userThrow = input("What would you like to attack with? (r, p or s):")
+    computerChoice = ComputerTurn(scissorsImage, paperImage, rockImage)
+    draw = DetermineDraw(userThrow, computerChoice)
+    if draw == False:
+        win = DetermineWinner(userThrow, computerChoice)
+        if(win == True):
+            print("Congratulations, you win!")
+        else:
+            print("Oh Dear, you lost!")
+        again = input("Would you like to play again?:")
+        if again in ["n", "N", "No", "no", "NO"]:
+            break
+    else:
+        print("Draw! Try again")
