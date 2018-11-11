@@ -1,0 +1,26 @@
+import random
+
+print("Welcome to hangman, start guessing the word/letters!")
+wordList = ["Awkward", "Bagpipes", "Crypt", "Dwarves", "Fishhook", "Gazebo", "Hyphen", "Ivory", "Jukebox", "Kiosk", "Memento", "Oxygen", "Pixel", "Quad", "Rogue", "Squawk", "Twelfth", "Unzip", "Waxy", "Yacht", "Zigzag"]
+word = wordList[random.randint(0,21)]
+turns = 10
+guesses = ""
+
+while turns > 0:
+    failedTurns = 0
+    for letter in word:
+        if letter in guesses:
+            print (letter)
+        else:
+            print("_")
+            failedTurns += 1
+    if failedTurns == 0:
+        print("You Won!")
+        break
+    guess = input("Guess a character:")
+    guesses += guess
+    if guess not in word:
+        turns -= 1
+        print ("Wrong! You have " + str(turns), "more guesses.")
+        if turns == 0:
+            print("You lose!")
