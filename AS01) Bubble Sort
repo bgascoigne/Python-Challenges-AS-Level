@@ -1,0 +1,17 @@
+import random
+
+def SortList(numList):
+    sortedList = numList
+    n = len(sortedList)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if(sortedList[j] > sortedList[j+1]):
+                sortedList[j], sortedList[j+1] = sortedList[j+1], sortedList[j]
+    return sortedList
+
+numList = []
+for i in range(1, 9):
+    numList.append(random.randint(1, 100))
+print("The original list is:", numList)
+sortedList = SortList(numList)
+print("The bubble sorted list is:", sortedList)
