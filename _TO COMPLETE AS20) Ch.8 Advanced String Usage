@@ -1,0 +1,38 @@
+---------------------------------------------------------------
+Question 1:
+
+>>> "Python"[1]
+>>> "Strings are sequences of characters."[5]
+>>> len("wonderful")
+>>> "Mystery"[:4]
+>>> "p" in "Pineapple"
+>>> "apple" in "Pineapple"
+>>> "pear" not in "Pineapple"
+>>> "apple" > "pineapple"
+>>> "pineapple" < "Peach"
+
+---------------------------------------------------------------
+Question 2:
+
+prefixes = "JKLMNOPQ"
+suffix = "ack"
+
+for letter in prefixes:
+    if letter in ["O", "Q"]:
+        print(letter + "u" + suffix)
+    else:
+        print(letter + suffix)
+
+---------------------------------------------------------------
+Question 3:
+
+def CountLetters(fruit, count):
+    for char in fruit:
+        if char == "a":
+            count += 1
+    return count
+
+fruit = "banana"
+count = 0
+count = CountLetters(fruit, count)
+print("There are", count, "letters in this word.")
