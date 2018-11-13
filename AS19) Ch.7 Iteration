@@ -30,7 +30,7 @@ Question 3:
 
 def TotallingOddNumbers(numList):
     total = 0
-    for num in numList:
+    for num in numList: 
         if (num % 2) != 0:
             total += num
     return total
