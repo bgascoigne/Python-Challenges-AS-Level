@@ -29,7 +29,7 @@ scissorsImage = """
 
 def ComputerTurn(sImage, pImage, rImage):
     choices = ["s", "p", "r"]
-    choice = choices[random.randint(0, len(choices))]
+    choice = choices[random.randint(0, 2)]
     print("The computer has chosen:")
     if choice in "scissors":
         print(sImage)
