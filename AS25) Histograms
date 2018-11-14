@@ -1,0 +1,15 @@
+def FindingNumbers():
+    amount = int(input("How many values are you inputting?:"))
+    numList = []
+    for num in range(1, amount + 1):
+        numToAdd = int(input("What is the number you would like to input?:"))
+        numList.append(numToAdd)
+    return numList
+
+def PrintingHistogram(numList):
+    histogramLetter = "*"
+    for value in numList:
+        print(histogramLetter * value)
+
+numList = FindingNumbers()
+PrintingHistogram(numList)
