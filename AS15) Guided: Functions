@@ -1,0 +1,29 @@
+-------------------------------------------------------------
+Exercise 1:
+
+def SumList(numList):
+    result = 0
+    for num in numList:
+        result += num
+    return result
+
+myList = [1,2,3,4,5]
+total = SumList(myList)
+print(total)
+
+-------------------------------------------------------------
+Exercise 2:
+
+Yes, functions can be called inside of functions.
+
+-------------------------------------------------------------
+Exercise 3:
+
+Yes, a function can call itself with the 'recursion' command.
+
+-------------------------------------------------------------
+Exercise 4:
+
+No, variables created in a function cannot be called outside of it, however you can return the value in the function
+
+-------------------------------------------------------------
