@@ -1,0 +1,87 @@
+import time
+import random
+import os
+
+def PrintStartMenu():
+    print("""
+  _____________________________________________________
+ /                                                     \
+
+|     _____________________________________________     |
+|    |                                             |    |
+|    |                 Welcome To:                 |    |
+|    |          FALLOUT 4 TERMINAL HACKER          |    |
+|    |                 Video Game                  |    |
+|    |                                             |    |
+|    |                   Rules:                    |    |
+|    |     You will be given a series of words     |    |
+|    | Only one of those words is the correct pass |    |
+|    |           When you choose a word            |    |
+|    |       You will get a 'likeness' value       |    |
+|    |This determines how many characters are right|    |
+|    | And how many letters are in the right place |    |
+|    |                                             |    |
+|    |                  GOOD LUCK                  |    |
+|    |_____________________________________________|    |
+|                                                       |
+\_______________________________________________________/
+       \_______________________________________/
+    """)
+
+def CalculateLikeness(playersInput ,answer):
+    likeness = 0
+    for char in playersInput:
+        for answerChar in answer:
+            if char == answerChar:
+                likeness += 1
+    return likeness
+
+def GameScreen(words):
+    spacers = ["!", "£", "$", "%", "^", "&", "*", "(", ")", "{", "}", "[", "]", "-"]
+    print(words[0] + spacers[random.randint(0,13)] + spacers[random.randint(0,13)] + spacers[random.randint(0,13)] + spacers[random.randint(0,13)] + words[1] + spacers[random.randint(0,13)] + spacers[random.randint(0,13)] + spacers[random.randint(0,13)] + spacers[random.randint(0,13)] + words[2])
+    print(words[3] + spacers[random.randint(0,13)] + spacers[random.randint(0,13)] + spacers[random.randint(0,13)] + spacers[random.randint(0,13)] + words[4] + spacers[random.randint(0,13)] + spacers[random.randint(0,13)] + spacers[random.randint(0,13)] + spacers[random.randint(0,13)] + words[5])
+    print(words[6] + spacers[random.randint(0,13)] + spacers[random.randint(0,13)] + spacers[random.randint(0,13)] + spacers[random.randint(0,13)] + words[7] + spacers[random.randint(0,13)] + spacers[random.randint(0,13)] + spacers[random.randint(0,13)] + spacers[random.randint(0,13)] + words[8])
+
+def SelectingWordChoices():
+    wList1 = ["LARGEST", "LIBRARY", "FISHINGS", "HISSING", "PARENTS", "VASSALS", "NUCLEAR", "GREETED", "RELATED"]
+    wList2 = ["NUCLEAR", "GREETED", "RELATED", "TAKINGS", "TALKING", "CLEAVER", "FISHINGS", "HISSING", "PARENTS"]
+    wList3 = ["SHOT", "HURT", "SELL", "GIVE", "SURE", "GEAR", "SENT", "FIRE", "GLOW"]
+    wList4 = ["NAIL", "MEET", "IDEA", "BOSS", "LISA", "GANG", "OWED", "OPEN", "RUSH"]
+    allWords = [wList1, wList2, wList3, wList4]
+    words = allWords[random.randint(0,3)]
+    return words
+
+PrintStartMenu()
+while True:
+    print("Type 'start' to play the game, or type 'quit' to quit the game")
+    quitOrStart = input("Would you like to start or quit?:")
+    if quitOrStart in ["QUIT", "Quit", "quit"]:
+        break
+    elif quitOrStart in ["Start", "start", "START"]:
+        os.system('cls')
+        words = SelectingWordChoices()
+        answer = words[random.randint(0,8)]
+        print("PASSWORD REQUIRED")
+        attempts = 4
+        GameScreen(words)
+        while attempts > 0:
+            playersInput = input("WHAT IS YOUR PASSWORD?:").upper()
+            if playersInput != answer:
+                print("You have", attempts, "access attempts remaining")
+                print("SORRY THAT IS INCORRECT")
+                likeness = CalculateLikeness(playersInput,answer)
+                print("LIKENESS =", likeness)
+                attempts -= 1
+                print("")
+            else:
+                print("ACCESS GRANTED, WELCOME")
+                print("RETURNING TO MENU")
+                time.sleep(2)
+                os.system('cls')
+                break
+        if attempts == 0:
+            print("ACCESS DENIED")
+            time.sleep(2)
+            os.system('cls')
+    else:
+        print("ERROR - Invalid input, please either type 'start' or 'exit'")
