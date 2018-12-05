@@ -1,0 +1,10 @@
+x = int(input("What is the length of the grid: "))
+y = int(input("What is the height of the grid: "))
+for i in range(1, y + 1):
+    line = ""
+    for val in range(1, x + 1):
+        if val % 2 != 0:
+            line += "."
+        else:
+            line += "*"
+    print(line)
