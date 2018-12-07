@@ -1,0 +1,10 @@
+file = open("wordlist.txt", "r")
+wordCount = 0
+letterLength = 0
+for line in file:
+    splitLine = line.split(" ")
+    for word in splitLine:
+        wordCount += 1
+        for character in word:
+            letterLength += 1
+print("The average word length is:", int(letterLength / wordCount), "lettters.")
